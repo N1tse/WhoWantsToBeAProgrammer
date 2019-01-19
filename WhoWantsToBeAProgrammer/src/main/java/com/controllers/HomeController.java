@@ -27,4 +27,7 @@ public class HomeController {
     
     public void example(){
     }
+    
+    public void test(){}
+    
 }
