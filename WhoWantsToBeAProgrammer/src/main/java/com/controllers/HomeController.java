@@ -8,6 +8,7 @@ package com.controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+import pogos.Userdao;
 
 /**
  *
@@ -18,6 +19,9 @@ public class HomeController {
     
     @RequestMapping("index")
     public ModelAndView mainpage(){
+        System.out.println("controller");
+        Userdao d = new Userdao();
+        d.connection();
         return new ModelAndView("home");
     }
     

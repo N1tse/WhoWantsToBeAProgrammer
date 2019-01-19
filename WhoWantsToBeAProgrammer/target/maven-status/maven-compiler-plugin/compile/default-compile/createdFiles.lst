@@ -1,3 +1,10 @@
+pogos\Questions.class
+pogos\Score.class
+com\controllers\HomeController.class
+pogos\Subject.class
 com\candidjava\spring\configuration\SpringWebIntializer.class
 com\candidjava\spring\configuration\SpringConfiguration.class
-com\controllers\HomeController.class
+pogos\DataConn.class
+pogos\Role.class
+pogos\User.class
+pogos\Userdao.class
