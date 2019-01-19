@@ -6,9 +6,11 @@
 package com.controllers;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-import pogos.Userdao;
+import pojos.User;
+import pojos.Userdao;
 
 /**
  *
@@ -19,15 +21,27 @@ public class HomeController {
     
     @RequestMapping("index")
     public ModelAndView mainpage(){
-        System.out.println("controller");
-        Userdao d = new Userdao();
-        d.connection();
         return new ModelAndView("home");
     }
     
-    public void example(){
+    @RequestMapping("loginPage")
+    public ModelAndView redirectLoginPage(){
+        return new ModelAndView("login");
     }
     
+    @PostMapping("loginController")
+    public ModelAndView loginCheck(User user){
+        Userdao dao = new Userdao();     
+        User u = dao.login(user.getUsername(), user.getPassword());
+        if(u==null){
+            ModelAndView model = new ModelAndView("home");           
+            return model;
+        }else{
+            ModelAndView done = new ModelAndView("profile"); 
+            done.addObject("user", u);
+            return done;
+        }
+    }
     
     
 }

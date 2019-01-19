@@ -13,7 +13,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="resources/css/main.css" />
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -26,10 +26,11 @@
 			<h1 class="logo-caption"><span class="tweak">L</span>ogin</h1>
 		</div><!-- /.logo -->
 		<div class="controls">
-          
-            <input type="text" name="username" placeholder="Username" class="form-control" />
-			<input type="password" name="username" placeholder="Password" class="form-control" />
-			<button type="button" class="btn btn-default btn-block btn-custom">Login</button>
+                    <form method="POST" action="loginController" modelAttribute="user">
+                         <input type="text" name="username" placeholder="Username" class="form-control" />
+			<input type="password" name="password" placeholder="Password" class="form-control" />
+			<button type="submit" class="btn btn-default btn-block btn-custom">Login</button>
+                    </form>
 		</div><!-- /.controls -->
 	</div><!-- /#login-box -->
 </div><!-- /.container -->
