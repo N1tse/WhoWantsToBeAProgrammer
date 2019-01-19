@@ -26,12 +26,12 @@ public class DataConn {
        }
        else {
             try{
-              //  String Driver = "com.mysql.jdbc.Driver";
+                String Driver = "com.mysql.jdbc.Driver";
                 String url = "jdbc:mysql://ra1.anystream.eu:1011/dteam?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
                 String username = "dteam";
                 String password = "dteam";
-              //  Class.forName(Driver);
 
+                Class.forName(Driver);
                 conn = DriverManager.getConnection(url, username, password);
                 //System.out.println("paokara dynata");
                 Statement st = conn.createStatement();
@@ -50,7 +50,7 @@ public class DataConn {
         if (conn != null) {
             try {
                 conn.close();
-                
+                System.out.println("CONNECTION CLOSED");
             } catch (SQLException ex) {
                 System.out.println("Connection Close Error");
             }
@@ -87,7 +87,6 @@ public class DataConn {
         }
         Statement st = conn.createStatement();
         return st.executeQuery(sqlCommand);
-        
     }
     
 }

@@ -5,6 +5,9 @@
  */
 package pogos;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import static pogos.DataConn.closeConnection;
 import static pogos.DataConn.getConnection;
 
 /**
@@ -13,10 +16,16 @@ import static pogos.DataConn.getConnection;
  */
 public class Userdao {
     public void connection(){
-      getConnection();
-        
-        
-
+      Connection conn = getConnection();
+      try{
+          PreparedStatement q = conn.prepareStatement("SELECT * FROM USER WHERE AGE=?");
+          q.setInt(0, 0);
+          q.executeQuery();
+      }catch(Exception e){
+          System.out.println(e);
+      }finally{
+          closeConnection();
+      }
     }
 }
 

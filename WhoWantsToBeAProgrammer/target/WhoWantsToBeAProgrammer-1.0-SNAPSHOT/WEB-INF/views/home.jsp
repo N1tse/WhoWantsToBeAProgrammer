@@ -12,6 +12,7 @@
         <title>JSP Page</title>
     </head>
     <body>
+        <img src="resources/images/images.jpg" />
         <h1>WELCOME TO HOME PAGE</h1>
     </body>
 </html>

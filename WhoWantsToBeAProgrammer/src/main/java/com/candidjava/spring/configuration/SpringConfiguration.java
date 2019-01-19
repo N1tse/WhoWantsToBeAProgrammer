@@ -7,12 +7,14 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages="com.controllers")
-public class SpringConfiguration {
+public class SpringConfiguration extends WebMvcConfigurerAdapter  {
 	
 	
 	@Bean(name="jspViewResolver")
@@ -35,5 +37,9 @@ public class SpringConfiguration {
 		return messageSource;
 		
 	}
+        @Override
+        public void addResourceHandlers(final ResourceHandlerRegistry registry) {
+            registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
+        }
 	
 }
