@@ -28,6 +28,10 @@ public class HomeController {
     public ModelAndView redirectLoginPage(){
         return new ModelAndView("login");
     }
+    @RequestMapping("registerPage")
+    public ModelAndView redirectRegisterPage(){
+        return new ModelAndView("register");
+    }
     
     @PostMapping("loginController")
     public ModelAndView loginCheck(User user){

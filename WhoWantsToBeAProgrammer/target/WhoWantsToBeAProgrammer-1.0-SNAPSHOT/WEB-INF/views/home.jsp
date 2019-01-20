@@ -27,7 +27,7 @@
                     
                     <div class="log">
                         <a href="loginPage"><button type="button" class="btn btn-danger" style = "width: 160px; height: 40px; margin-right: 134px;">Login</button></a>
-                        <a><button type="button" class="btn btn-danger" style = "width: 160px; height:40px; ">Register</button></a>
+                        <a href="registerPage"><button type="button" class="btn btn-danger" style = "width: 160px; height:40px; ">Register</button></a>
                     </div>
                    </div>
     </div>

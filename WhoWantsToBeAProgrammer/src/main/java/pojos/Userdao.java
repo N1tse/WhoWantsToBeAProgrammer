@@ -23,9 +23,9 @@ public class Userdao {
         Connection conn = getConnection();
         User user = new User();
         try{
-            PreparedStatement q = conn.prepareStatement("SELECT * FROM users WHERE USERNAME='"+username+"' AND PASSWORD='"+password+"'");
-//            q.setString(1, username);
-//            q.setString(2, password);
+            PreparedStatement q = conn.prepareStatement("SELECT * FROM users WHERE USERNAME=? AND PASSWORD=?");
+            q.setString(1, username);
+            q.setString(2, password);
             ResultSet result = q.executeQuery();
             while(result.next()){
                 user.setId(result.getInt(1));
