@@ -18,7 +18,7 @@
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="main.css" /> 
-    <link rel = "stylesheet" href = "main2.css"
+    <link rel = "stylesheet" href = "resources/css/main.scss"
 </head>
 <body>
     <div id="particles-js" class="text-center">
@@ -33,6 +33,6 @@
     </div>
 </body>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
-<script src="main.js"></script>
+<script src="resources/js/main.js"></script>
 </html>
 
