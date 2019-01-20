@@ -5,9 +5,12 @@
  */
 package com.controllers;
 
+import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 import org.springframework.web.servlet.ModelAndView;
 import pojos.User;
 import pojos.Userdao;
@@ -18,7 +21,10 @@ import pojos.Userdao;
  */
 @Controller
 public class HomeController {
-    
+    public static HttpSession session() {
+        ServletRequestAttributes attr = (ServletRequestAttributes) RequestContextHolder.currentRequestAttributes();
+        return attr.getRequest().getSession(true); // true == allow create
+    }
     @RequestMapping("index")
     public ModelAndView mainpage(){
         return new ModelAndView("home");
@@ -42,7 +48,9 @@ public class HomeController {
             return model;
         }else{
             ModelAndView done = new ModelAndView("profile"); 
-            done.addObject("user", u);
+//            done.addObject("user", u);
+            HttpSession session =  session();
+            session.setAttribute("u", u);
             return done;
         }
     }

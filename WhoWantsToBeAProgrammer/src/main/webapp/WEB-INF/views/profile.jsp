@@ -13,7 +13,7 @@
     </head>
     <body>
         <h1>Profile</h1>
-        <p>WELCOME ${user.username}</p>
-        <h3>${user.fname}</h3>
+        <p>WELCOME ${u.username}</p>
+        <h3>${u.fname}</h3>
     </body>
 </html>
