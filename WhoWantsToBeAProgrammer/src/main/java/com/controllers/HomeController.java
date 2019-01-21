@@ -39,6 +39,7 @@ public class HomeController {
         return new ModelAndView("register");
     }
     
+    //testComment
     @PostMapping("loginController")
     public ModelAndView loginCheck(User user){
         Userdao dao = new Userdao();     
