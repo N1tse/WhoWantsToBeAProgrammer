@@ -17,12 +17,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="main.css" /> 
+    <link rel="stylesheet" href="resources/css/main.css" /> 
 </head>
 <body>
     <div id="particles-js" class="text-center">
             <div id="log_id" class="column">
-                    <img src="images.png"  class="image"/> 
+                    <img src="resources/images/images.png"  class="image"/> 
                     
                     <div class="log">
                         <a href="loginPage"><button type="button" class="btn btn-danger" style = "width: 160px; height: 40px; margin-right: 134px;">Login</button></a>
