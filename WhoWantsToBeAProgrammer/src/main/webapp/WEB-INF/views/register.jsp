@@ -25,14 +25,16 @@
 			<img src="resources/images/images.png" class="img img-responsive img-circle center-block "/>
 			<h1 class="logo-caption"><span class="tweak">R</span>egister</h1>
 		</div><!-- /.logo -->
+                <form action="addUserController" method="post" modelAttribute="user">
 		<div class="controls">
                 <input type="text" name="username" placeholder="Username" class="form-control" />
-                <input type="text" name="first-name" placeholder="First-name" class="form-control" />
-                <input type="text" name="last-name" placeholder="Last-name" class="form-control" />
+                <input type="text" name="fname" placeholder="First-name" class="form-control" />
+                <input type="text" name="lname" placeholder="Last-name" class="form-control" />
             
-			<input type="password" name="username" placeholder="Password" class="form-control" />
-			<button type="button" class="btn btn-default btn-block btn-custom">Register</button>
+			<input type="password" name="password" placeholder="Password" class="form-control" />
+			<button type="submit" class="btn btn-default btn-block btn-custom">Register</button>
 		</div><!-- /.controls -->
+                </form>
 	</div><!-- /#login-box -->
 </div><!-- /.container -->
 </div>

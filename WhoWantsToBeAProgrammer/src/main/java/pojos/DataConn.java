@@ -26,6 +26,7 @@ public class DataConn {
        }
        else {
             try{
+
                 String Driver = "com.mysql.jdbc.Driver";
                 String url = "jdbc:mysql://ra1.anystream.eu:1011/dteam?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
                 String username = "dteam";
@@ -91,3 +92,6 @@ public class DataConn {
     }
     
 }
+
+
+

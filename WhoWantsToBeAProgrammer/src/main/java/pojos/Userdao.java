@@ -44,6 +44,32 @@ public class Userdao {
         return null;
     }
     
+    public User Register (User u){
+          Connection con=getConnection(); 
+	// User u = new User();
+        int role=1;
+	try{
+		          
+		PreparedStatement ps=con.prepareStatement("INSERT INTO users(username,password,fname,lname,role_id) VALUES(?,?,?,?,?)");
+             
+		ps.setString(1,u.getUsername());
+		ps.setString(2,u.getPassword());
+		ps.setString(3,u.getFname());
+		ps.setString(4,u.getLname());
+		ps.setInt(5,role);
+		ps.executeUpdate();
+	}catch(Exception e){System.out.println(e);
+        
+        }
+        
+        finally{
+            closeConnection();
+        }
+	
+        return null;
+  }
+    
+    
     
 }
 

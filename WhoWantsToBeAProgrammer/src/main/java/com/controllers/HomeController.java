@@ -39,6 +39,16 @@ public class HomeController {
         return new ModelAndView("register");
     }
     
+       @PostMapping("addUserController")
+   
+    public ModelAndView Register (User user){
+        Userdao dao = new Userdao();
+        dao.Register(user);
+   return new ModelAndView("login");
+    
+    }
+    
+    
     //testComment
     @PostMapping("loginController")
     public ModelAndView loginCheck(User user){
@@ -56,5 +66,5 @@ public class HomeController {
         }
     }
     
-    
+ 
 }
