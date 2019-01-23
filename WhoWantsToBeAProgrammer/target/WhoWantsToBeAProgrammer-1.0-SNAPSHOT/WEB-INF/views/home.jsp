@@ -29,6 +29,7 @@
                         <a href="registerPage"><button type="button" class="btn btn-danger" style = "width: 160px; height:40px; ">Register</button></a>
                     </div>
                    </div>
+        <div style="position: absolute;bottom: 0;right: 0;"><a style="color: black; padding: 30px;" href="adminLogin">admin</a></div>
     </div>
 </body>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>

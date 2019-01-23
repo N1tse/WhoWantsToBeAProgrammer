@@ -45,10 +45,10 @@
                             COURSES
                           </a>
                           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item"  style="color:black;" href="#">JAVA</a>
-                            <a class="dropdown-item"  style="color:black;" href="#">C#</a>
+                            <a class="dropdown-item"  style="color:black;" href="javaQuestionsController${"java"}">JAVA</a>
+                            <a class="dropdown-item"  style="color:black;" href="javaQuestionsController${"c#"}">C#</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item"  style="color:black;" href="#">JAVASCRIPT</a>
+                            <a class="dropdown-item"  style="color:black;" href="javaQuestionsController${"javascript"}">JAVASCRIPT</a>
                           </div>
                         </li>
                       </ul>
@@ -57,7 +57,7 @@
                       </div>
                     </div>
                   </nav>
-
+                      <h5>${msg}</h5>
 
     </div>
 </body>

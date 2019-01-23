@@ -17,13 +17,13 @@ body, html {
 	background:black;
 	position: relative;
 }
-#login-box {
-	  position: absolute; 
-	 top: 25%; 
-	 left: 50%;  
-	 transform: translateX(-50%);  
+#login-box{
+	position: absolute; 
+        top: 10%; 
+	left: 50%;  
+	transform: translateX(-50%);  
 	width: 350px;
-    margin: 0 auto;
+        margin: 0 auto;
 	border: 1px solid black;
 	background: rgba(48, 46, 45, 1);
 	min-height: 250px;

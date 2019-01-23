@@ -10,7 +10,7 @@
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Page Title</title>
+        <title>Register Page</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
@@ -18,7 +18,6 @@
         <link rel="stylesheet" href="resources/css/main.css" />
     </head>
     <body>
-        <div id="particles-js">
         <div class="container d-flex parent-div align-items-center justify-content-center">
 	<div id="login-box" class="child-div">
 		<div class="logo">
@@ -37,7 +36,7 @@
                 </form>
 	</div><!-- /#login-box -->
 </div><!-- /.container -->
-</div>
+        <div id="particles-js"></div>
     </body>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
     <script src="resources/js/main.js"></script>

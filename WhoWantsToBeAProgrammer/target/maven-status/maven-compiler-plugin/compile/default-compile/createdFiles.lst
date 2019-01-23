@@ -2,6 +2,7 @@ com\controllers\HomeController.class
 com\candidjava\spring\configuration\SpringWebIntializer.class
 com\candidjava\spring\configuration\SpringConfiguration.class
 pojos\DataConn.class
+pojos\QuestionDao.class
 pojos\Subject.class
 pojos\User.class
 pojos\Questions.class
