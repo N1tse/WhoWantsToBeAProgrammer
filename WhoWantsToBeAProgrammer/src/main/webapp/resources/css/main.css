@@ -106,3 +106,7 @@ body, html {
     width: 230px;
 }
 
+#login_name{
+    font-size: 2em;
+    margin-right: 1em;
+}

@@ -29,10 +29,10 @@ public class Userdao {
             ResultSet result = q.executeQuery();
             while(result.next()){
                 user.setId(result.getInt(1));
-                user.setUsername(result.getString(2));
+                user.setUsername(result.getString(2).toUpperCase());
                 user.setPassword(result.getString(3));
-                user.setFname(result.getString(4));
-                user.setLname(result.getString(5));
+                user.setFname(result.getString(4).toUpperCase());
+                user.setLname(result.getString(5).toUpperCase());
                 user.setRole_id(result.getInt(6));
                 return user;
             }
