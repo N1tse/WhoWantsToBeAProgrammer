@@ -24,7 +24,7 @@
     <div id="particles-js">
             <div class="text-center" style="width:100%; position: absolute; z-index: 1; background: transparent;">
                     <a class="navbar-brand" href="#">
-                            <img src="resources/images/imagesMain.png" width="30" height="30" alt="">
+                            <img src="resources/images/imagesMain.png" width="130px" height="130px" alt="">
                     </a>
                 </div>
             <nav class="navbar navbar-expand-lg navbar-light" style="background: #D9534F;">
