@@ -86,6 +86,22 @@ public class HomeController {
             return done;
         }
     }
+    
+     @PostMapping("loginAdminController")
+    public ModelAndView loginAdminCheck(User user){
+        Userdao dao = new Userdao();     
+        User u = dao.loginAdmin(user.getUsername(), user.getPassword());
+        if(u==null){
+            ModelAndView model = new ModelAndView("adminLogin");           
+            return model;
+        }else{
+            ModelAndView done = new ModelAndView("homeAdmin"); 
+            HttpSession session =  session();
+            session.setAttribute("u", u);
+            return done;
+        }
+    }
+    
 
     @RequestMapping("javaQuestionsController{subject}")
     public ModelAndView javaQuestions(@PathVariable("subject") String subject){

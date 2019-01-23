@@ -10,10 +10,33 @@ and open the template in the editor.
 .container{
     background-color: white;
     margin-top: 200px;
+    height: 55%;
 }
-
+.containerC{
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
 #heading2{
     text-align: center;
     border-bottom-style: groove;
     border-bottom-color: #D9534F;
+    font-size: 45px;
+}
+
+.panelscore{
+    background-color: #D9534F;
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    font-size: 20px;
+}
+
+.panelbody{
+    background-color: #D9534F;
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    font-size: 20px;
 }

@@ -44,6 +44,34 @@ public class Userdao {
         return null;
     }
     
+ public User loginAdmin(String username,String password){
+        Connection conn = getConnection();
+        User user = new User();
+       int role = 2;
+        try{
+            PreparedStatement q = conn.prepareStatement("SELECT * FROM users WHERE USERNAME=? AND PASSWORD=? AND ROLE_ID=?");
+            q.setString(1, username);
+            q.setString(2, password);
+            q.setInt(3, role);
+//            q.setInt(3, role);
+            ResultSet result = q.executeQuery();
+            while(result.next()){
+                user.setId(result.getInt(1));
+                user.setUsername(result.getString(2).toUpperCase());
+                user.setPassword(result.getString(3));
+                user.setFname(result.getString(4).toUpperCase());
+                user.setLname(result.getString(5).toUpperCase());
+                user.setRole_id(result.getInt(6));
+                return user;
+            }
+        }catch(SQLException e){
+            System.out.println(e);
+        }finally{
+            closeConnection();
+        }
+        return null;
+    }
+    
     public User Register (User u){
           Connection con=getConnection(); 
 	// User u = new User();

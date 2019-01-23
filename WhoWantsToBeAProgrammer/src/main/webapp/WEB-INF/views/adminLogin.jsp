@@ -27,7 +27,7 @@
 			<h1 class="logo-caption"><span class="tweak">L</span>ogin Admin</h1>
 		</div><!-- /.logo -->
 		<div class="controls">
-                    <form method="POST" action="loginController" modelAttribute="user">
+                    <form method="POST" action="loginAdminController" modelAttribute="user">
                          <input type="text" name="username" placeholder="Username" class="form-control" />
 			<input type="password" name="password" placeholder="Password" class="form-control" />
 			<button type="submit" class="btn btn-default btn-block btn-custom">Login</button>

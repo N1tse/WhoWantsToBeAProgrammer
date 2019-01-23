@@ -69,28 +69,26 @@
             <div class="page-header2">
                 <h2 id="heading2">User Profile Info</h2>
             </div>
-        <div class="col-md-4">
-            <div class="panel panel-default">
-                <div class="paneluser">Username<label>Nassos</label></div>
-                <div class="panelbody">Subject</div>
-                <div class="panelscore">Score</div>              
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="panel panel-primary">
-                <div class="paneluser">Username</div>
-                <div class="panelbody">Subject</div>
-                <div class="panelscore">Score</div>              
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="panel panel-info">
-                <div class="paneluser">Username</div>
-                <div class="panelbody">Subject</div>
-                <div class="panelscore">Score</div>              
-            </div>
-        </div>
-            
+            <div class="containerC">
+                <div class="column">
+                    <div class="panel">
+                        <div class="panelbody">Subject<label>Java</label></div>
+                        <div class="panelscore">Score<label>1</label></div>            
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="panel">
+                        <div class="panelbody">Subject<label>C#</label></div>
+                        <div class="panelscore">Score<label>4</label></div>              
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="panel">
+                        <div class="panelbody">Subject<label>Javascript</label></div>
+                        <div class="panelscore">Score<label>7</label></div>             
+                    </div>
+                </div>
+            </div>    
     </div>
                       
     </body>
