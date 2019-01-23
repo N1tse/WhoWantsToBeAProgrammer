@@ -52,6 +52,16 @@ public class HomeController {
         return new ModelAndView("adminLogin");
     }
     
+    @RequestMapping("userProfile")
+    public ModelAndView userProfile(){
+        return new ModelAndView("userProfile");
+    }
+    
+    @RequestMapping("profile")
+    public ModelAndView profile(){
+        return new ModelAndView("profile");
+    }
+    
     @PostMapping("addUserController")
     public ModelAndView Register (User user){
         Userdao dao = new Userdao();

@@ -24,6 +24,7 @@
     <script src="js/jsquery.js"></script>
     <script src="js/bootstrap.js"></script>
     <link rel="stylesheet" href="resources/css/main.css" />
+    <link rel="stylesheet" href="resources/css/userProfile.css"/>
     </head>
     <body>
         <div class="text-center" style="width:100%; position: absolute; z-index: 1; background: transparent;">
@@ -39,10 +40,10 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent" style="z-index:3;">
                       <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                          <a class="nav-link" style="color:white;" href="#">HOME <span class="sr-only">(current)</span></a>
+                          <a class="nav-link" style="color:white;" href="profile">HOME <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" style="color:white;" href="goProfile">PROFILE</a>
+                          <a class="nav-link" style="color:white;" href="userProfile">PROFILE</a>
                         </li>
                         <li class="nav-item dropdown">
                           <a class="nav-link dropdown-toggle"  style="color:white;" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
