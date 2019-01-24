@@ -59,6 +59,11 @@ public class HomeController {
     public ModelAndView adminLogin(){
             return new ModelAndView("adminLogin");
     }
+    @RequestMapping("logout")
+    public ModelAndView logout(){
+        flagMain = false;
+        return new ModelAndView("home");
+    }
     
     @RequestMapping("userProfile")
     public ModelAndView userProfile(){
@@ -143,7 +148,7 @@ public class HomeController {
     }
     
 
-    @RequestMapping("javaQuestionsController{subject}")
+    @RequestMapping("QuestionsController{subject}")
     public ModelAndView javaQuestions(@PathVariable("subject") String subject){
         if(flagMain==false){
             return new ModelAndView("home");
@@ -182,13 +187,13 @@ public class HomeController {
                     case "java":
                         currentSubject_id = 1;
                         break;
-                    case "c##":
+                    case "c_sharp":
                         currentSubject_id = 2;
                         break;
                     case "javascript":
                         currentSubject_id = 3;
                         break;
-                    case "full_stack":
+                    case "python":
                         currentSubject_id = 4;
                         break;
                 }

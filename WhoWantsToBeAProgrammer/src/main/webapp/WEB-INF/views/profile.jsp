@@ -48,10 +48,13 @@
                             COURSES
                           </a>
                           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item"  style="color:black;" href="javaQuestionsController${"java"}">JAVA</a>
-                            <a class="dropdown-item"  style="color:black;" href="javaQuestionsController${"c#"}">C#</a>
+                            <a class="dropdown-item"  style="color:black;" href="QuestionsController${"java"}">JAVA</a>
+                             <div class="dropdown-divider"></div>
+                            <a class="dropdown-item"  style="color:black;" href="QuestionsController${"c_sharp"}">C#</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item"  style="color:black;" href="javaQuestionsController${"javascript"}">JAVASCRIPT</a>
+                            <a class="dropdown-item"  style="color:black;" href="QuestionsController${"javascript"}">JAVASCRIPT</a>
+                             <div class="dropdown-divider"></div>
+                             <a class="dropdown-item"  style="color:black;" href="QuestionsController${"python"}">PYTHON</a>
                           </div>
                           
                         </li>
@@ -59,6 +62,7 @@
                       <div class="my-2 my-lg-0">
                         <span id="login_name" style="color:white; font-size: 2em;margin-right: 1em;">${u.username}</span>
                         <span><img src="${'data:image/jpg;base64,'}${u.image }" style="height: 70px;border-radius: 50%;"></span>
+                        <span><a href="logout"><small>LogOut</small></a></span>
                       </div>
                     </div>
                   </nav>
