@@ -31,6 +31,25 @@
             display: flex;
             flex-direction: column;
         }
+        .contain{
+            display: flex;
+            justify-content: space-around;
+            margin-top: 40px;
+            font-size: 20px;
+            text-align: center;
+        }
+        .row0{
+            color: red;
+        }
+        .row1{
+            color: darkorange;
+        }
+        .row2{
+            color: gold;
+        }
+        .row3{
+            color: forestgreen;
+        }
     </style>
 </head>
 <body>
@@ -76,8 +95,141 @@
                     </div>
                   </nav>
                       <h5>${msg}</h5>
-
-   
+                      
+                      <div class="contain">  
+                        <div class="containJava">
+                          <caption>Top 3 scores in Java</caption>
+                          <table class="table">
+                              <thead class="row0">
+                                  <tr>
+                                        <th scope="col">Position</th>
+                                        <th scope="col">Username</th>
+                                        <th scope="col">Score</th>
+                                  </tr>
+                              </thead>
+                              <tbody class="row1">
+                                  <tr>
+                                        <th scope="col">1</th>
+                                        <th scope="col">nassos</th>
+                                        <th scope="col">40</th>
+                                  </tr>
+                              </tbody>
+                              <tbody class="row2">
+                                  <tr>
+                                        <th scope="col">2</th>
+                                        <th scope="col">asdf</th>
+                                        <th scope="col">34</th>
+                                  </tr>
+                              </tbody>
+                              <tbody class="row3">
+                                  <tr>
+                                        <th scope="col">1</th>
+                                        <th scope="col">asd</th>
+                                        <th scope="col">33</th>
+                                  </tr>
+                              </tbody>
+                          </table>    
+                        </div>
+                        <div class="containCsharp">
+                          <caption>Top 3 scores in Csharp</caption>
+                          <table class="table">
+                              <thead class="row0">
+                                  <tr>
+                                        <th scope="col">Position</th>
+                                        <th scope="col">Username</th>
+                                        <th scope="col">Score</th>
+                                  </tr>
+                              </thead>
+                              <tbody class="row1">
+                                  <tr>
+                                        <th scope="col">1</th>
+                                        <th scope="col">nassos</th>
+                                        <th scope="col">40</th>
+                                  </tr>
+                              </tbody >
+                              <tbody class="row2">
+                                  <tr>
+                                        <th scope="col">2</th>
+                                        <th scope="col">asdf</th>
+                                        <th scope="col">34</th>
+                                  </tr>
+                              </tbody>
+                              <tbody class="row3">
+                                  <tr>
+                                        <th scope="col">1</th>
+                                        <th scope="col">asd</th>
+                                        <th scope="col">33</th>
+                                  </tr>
+                              </tbody>
+                          </table>    
+                      </div>
+                      <div class="containJavascript">
+                          <caption>Top 3 scores in Javascript</caption>
+                          <table class="table">
+                              <thead class="row0">
+                                  <tr>
+                                        <th scope="col">Position</th>
+                                        <th scope="col">Username</th>
+                                        <th scope="col">Score</th>
+                                  </tr>
+                              </thead>
+                              <tbody class="row1">
+                                  <tr>
+                                        <th scope="col">1</th>
+                                        <th scope="col">nassos</th>
+                                        <th scope="col">40</th>
+                                  </tr>
+                              </tbody>
+                              <tbody class="row2">
+                                  <tr>
+                                        <th scope="col">2</th>
+                                        <th scope="col">asdf</th>
+                                        <th scope="col">34</th>
+                                  </tr>
+                              </tbody>
+                              <tbody class="row3">
+                                  <tr>
+                                        <th scope="col">1</th>
+                                        <th scope="col">asd</th>
+                                        <th scope="col">33</th>
+                                  </tr>
+                              </tbody>
+                          </table>    
+                      </div>
+                      <div class="containPython">
+                          <caption>Top 3 scores in Python</caption>
+                          <table class="table">
+                              <thead class="row0">
+                                  <tr>
+                                        <th scope="col">Position</th>
+                                        <th scope="col">Username</th>
+                                        <th scope="col">Score</th>
+                                  </tr>
+                              </thead>
+                              <tbody class="row1">
+                                  <tr>
+                                        <th scope="col">1</th>
+                                        <th scope="col">nassos</th>
+                                        <th scope="col">40</th>
+                                  </tr>
+                              </tbody>
+                              <tbody class="row2">
+                                  <tr>
+                                        <th scope="col">2</th>
+                                        <th scope="col">asdf</th>
+                                        <th scope="col">34</th>
+                                  </tr>
+                              </tbody>
+                              <tbody class="row3">
+                                  <tr>
+                                        <th scope="col">1</th>
+                                        <th scope="col">asd</th>
+                                        <th scope="col">33</th>
+                                  </tr>
+                              </tbody>
+                          </table>    
+                      </div>
+                    </div>
                       
                       <div id="container1" class="container">
                           
