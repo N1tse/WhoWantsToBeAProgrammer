@@ -16,16 +16,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/font-awesome.css">
     <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="resources/css/userProfile.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="js/jsquery.js"></script>
     <script src="js/bootstrap.js"></script>
-    <link rel="stylesheet" href="resources/css/main.css" />
-    <link rel="stylesheet" href="resources/css/userProfile.css"/>
+    <link rel="stylesheet" href="resources/css/main.css" >
+    <link rel="stylesheet" href="resources/css/userProfile.css">
     </head>
     <body>
         <div class="text-center" style="width:100%; position: absolute; z-index: 1; background: transparent;">
@@ -64,35 +64,29 @@
                     </div>
                   </nav>
                       
-        <div class="container" style="position: absolute; margin-top: 200px;"><br>
+        <div class="container" style="position: relative;"><br>
             <img src="${'data:image/jpg;base64,'}${u.image }" style="width: 100px;height: 100px;border-radius: 50%;" >
             
             <div class="page-header2 text-center">
                 <h2 id="heading2">User Profile Info</h2>
             </div>
             <div class="containerC">
-                <div class="column" style="margin-bottom: 10px; margin-top: 30px;">
+                <div class="column">
                     <div class="panel">
                         <div class="panelbody">Subject<label>Java</label></div>
-                        <div class="panelscore">Score<label>${javaScore}</label></div>            
+                        <div class="panelscore">Score<label>1</label></div>            
                     </div>
                 </div>
-                <div class="column" style="margin-bottom: 10px;">
+                <div class="column">
                     <div class="panel">
                         <div class="panelbody">Subject<label>C#</label></div>
-                        <div class="panelscore">Score<label>${cSharpScore}</label></div>              
+                        <div class="panelscore">Score<label>4</label></div>              
                     </div>
                 </div>
-                <div class="column" style="margin-bottom: 10px;">
+                <div class="column">
                     <div class="panel">
                         <div class="panelbody">Subject<label>Javascript</label></div>
-                        <div class="panelscore">Score<label>${javascriptScore}</label></div>             
-                    </div>
-                </div>
-                    <div class="column" style="margin-bottom: 10px;">
-                    <div class="panel">
-                        <div class="panelbody">Subject<label>Python</label></div>
-                        <div class="panelscore">Score<label>${pythonScore}</label></div>             
+                        <div class="panelscore">Score<label>7</label></div>             
                     </div>
                 </div>
                 
