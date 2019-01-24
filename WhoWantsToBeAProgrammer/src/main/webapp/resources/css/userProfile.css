@@ -10,8 +10,8 @@ and open the template in the editor.
 .container{
     background-color: white;
     position: absolute;
-    top: 5%;
-    left: 13%;;
+    top: 50%;
+    left: 13%;
 }
 .containerC{
     height: 80%;

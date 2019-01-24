@@ -11,6 +11,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Base64;
 import org.springframework.web.multipart.MultipartFile;
 import static pojos.DataConn.closeConnection;
@@ -125,6 +126,39 @@ public class Userdao {
             base64Image = Base64.getEncoder().encodeToString(byteArray);
         return base64Image;
     }
+      
+      public  ArrayList<Questions> getQuestion(){
+	ArrayList<Questions> list=new ArrayList<Questions>();
+	         
+	try{
+            
+		Connection con=getConnection();
+		PreparedStatement ps=con.prepareStatement("select * from questions inner join subjects on questions.subject_id = subjects.subject_id; ");
+		ResultSet rs=ps.executeQuery();
+		while(rs.next()){
+			Questions q = new Questions();
+			q.setId(rs.getInt("question_id"));
+			q.setQuestion(rs.getString("question"));
+			q.setA(rs.getString("a"));
+                        q.setB(rs.getString("b"));
+                        q.setC(rs.getString("c"));
+                        q.setD(rs.getString("d"));
+                        q.setCorrect(rs.getString("correct"));
+                        q.setSubject(rs.getString("name"));
+                        
+			
+			list.add(q);
+		}
+                System.out.println(list.size());
+                return list;
+	}catch(Exception e){System.out.println(e);}
+        finally{
+            closeConnection();
+        }
+	return null;
+     }
+      
+      
     
     
     
