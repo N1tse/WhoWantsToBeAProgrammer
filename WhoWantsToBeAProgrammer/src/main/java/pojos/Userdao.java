@@ -5,10 +5,14 @@
  */
 package pojos;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Base64;
+import org.springframework.web.multipart.MultipartFile;
 import static pojos.DataConn.closeConnection;
 import static pojos.DataConn.getConnection;
 
@@ -34,6 +38,8 @@ public class Userdao {
                 user.setFname(result.getString(4).toUpperCase());
                 user.setLname(result.getString(5).toUpperCase());
                 user.setRole_id(result.getInt(6));
+                byte[] b = result.getBlob(7).getBytes(1, (int) result.getBlob(7).length());
+                user.setImage(stringFromBlob(b));
                 return user;
             }
         }catch(SQLException e){
@@ -72,22 +78,20 @@ public class Userdao {
         return null;
     }
     
-    public User Register (User u){
+    public User Register (String username,String password,String fname,String lname,MultipartFile image)throws IOException{
           Connection con=getConnection(); 
-	// User u = new User();
         int role=1;
-	try{
-		          
-		PreparedStatement ps=con.prepareStatement("INSERT INTO users(username,password,fname,lname,role_id) VALUES(?,?,?,?,?)");
-             
-		ps.setString(1,u.getUsername());
-		ps.setString(2,u.getPassword());
-		ps.setString(3,u.getFname());
-		ps.setString(4,u.getLname());
+	try{          
+		PreparedStatement ps=con.prepareStatement("INSERT INTO users(username,password,fname,lname,role_id,image) VALUES(?,?,?,?,?,?)");
+		ps.setString(1,username);
+		ps.setString(2,password);
+		ps.setString(3,fname);
+		ps.setString(4,lname);
 		ps.setInt(5,role);
+                ps.setBlob(6, getBlobInputStream(image));
 		ps.executeUpdate();
-	}catch(Exception e){System.out.println(e);
-        
+	}catch(SQLException e){
+            System.out.println(e);  
         }
         
         finally{
@@ -96,6 +100,31 @@ public class Userdao {
 	
         return null;
   }
+    
+      public InputStream getBlobInputStream(MultipartFile filePart) {
+        InputStream inputStream = null; // input stream of the upload file
+        try {
+            if (filePart != null) {
+                // prints out some information for debugging
+                System.out.println(filePart.getName());
+                System.out.println(filePart.getSize());
+                System.out.println(filePart.getContentType());
+                inputStream = filePart.getInputStream();
+            }
+        } catch (IOException e) {
+            System.out.println("Error!");
+        }
+        
+        return inputStream;
+    }
+      
+      public String stringFromBlob(byte[] byteArray) {
+        String base64Image = null;
+        
+        if(byteArray!=null)
+            base64Image = Base64.getEncoder().encodeToString(byteArray);
+        return base64Image;
+    }
     
     
     

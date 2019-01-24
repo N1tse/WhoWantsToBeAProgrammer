@@ -65,8 +65,9 @@
     <div id="particles-js">
         
     </div>
-        <div class="container" ><br>
-            <div class="page-header2">
+        <div class="container" style="position: relative;"><br>
+            <img src="${'data:image/jpg;base64,'}${u.image }" style="width: 100px;height: 100px;border-radius: 50%;" >
+            <div class="page-header2 text-center">
                 <h2 id="heading2">User Profile Info</h2>
             </div>
             <div class="containerC">

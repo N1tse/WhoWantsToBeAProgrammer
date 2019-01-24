@@ -10,9 +10,11 @@ import org.springframework.web.context.support.AnnotationConfigWebApplicationCon
 import org.springframework.web.servlet.DispatcherServlet;
 
 import com.candidjava.spring.configuration.SpringConfiguration;
+import javax.servlet.MultipartConfigElement;
 
 public class SpringWebIntializer implements WebApplicationInitializer {
-
+    private String TMP_FOLDER = "/tmp";
+    private int MAX_UPLOAD_SIZE = 90 * 1024 * 1024;
 	public void onStartup(ServletContext container) throws ServletException {
 		AnnotationConfigWebApplicationContext context = new AnnotationConfigWebApplicationContext();
 		context.register(SpringConfiguration.class);
@@ -24,6 +26,11 @@ public class SpringWebIntializer implements WebApplicationInitializer {
 				"dispatcher", new DispatcherServlet(context));
 		servlet.setLoadOnStartup(1);
 		servlet.addMapping("/");
+                
+                 MultipartConfigElement multipartConfigElement = new MultipartConfigElement(TMP_FOLDER,
+                MAX_UPLOAD_SIZE, MAX_UPLOAD_SIZE * 2, MAX_UPLOAD_SIZE / 2);
+       
+                 servlet.setMultipartConfig(multipartConfigElement);
 
 	}
 

@@ -16,6 +16,15 @@ public class User {
     private String fname;
     private String lname;
     private int role_id;
+    private String image;
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
 
     public int getId() {
         return id;

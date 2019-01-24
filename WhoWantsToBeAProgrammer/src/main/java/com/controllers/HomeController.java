@@ -5,14 +5,17 @@
  */
 package com.controllers;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import pojos.QuestionDao;
 import pojos.Questions;
@@ -63,9 +66,10 @@ public class HomeController {
     }
     
     @PostMapping("addUserController")
-    public ModelAndView Register (User user){
+    public ModelAndView Register (@ModelAttribute("username") String username,@ModelAttribute("password") String password,@ModelAttribute("fname") String fname,@ModelAttribute("lname") String lname,@ModelAttribute("image")  MultipartFile image) throws IOException{
         Userdao dao = new Userdao();
-        dao.Register(user);
+        System.out.println(image);
+        dao.Register(username,password,fname,lname,image);
    return new ModelAndView("login");
     
     }
@@ -139,5 +143,7 @@ public class HomeController {
         rights = 0 ;
         return m;
     } 
+    
+    
  
 }
