@@ -64,6 +64,9 @@ public class HomeController {
     public ModelAndView userProfile(){
         ScoreDao sdao = new ScoreDao();
         int javaScore = 0;
+        int cSharp = 0;
+        int javascriptScore = 0;
+        int pythonScore = 0;
         ArrayList list;
         ScoreDao scoredao = new ScoreDao();
         if(flagMain==false){
@@ -71,10 +74,16 @@ public class HomeController {
         }else{
             HttpSession session1 =  session();
             list = scoredao.getLogById(currentUser.getId());
+            cSharp = scoredao.getCsharpScoreById(currentUser.getId());
             javaScore = scoredao.getJavaScoreById(currentUser.getId());
+            javascriptScore = scoredao.getJavascriptpScoreById(currentUser.getId());
+            pythonScore = scoredao.getPythonScoreById(currentUser.getId());
             ModelAndView model =  new ModelAndView("userProfile");
             System.out.println(list.size());
+            model.addObject("cSharpScore", cSharp);
             model.addObject("javaScore", javaScore);
+            model.addObject("javascriptScore", javascriptScore);
+            model.addObject("pythonScore", pythonScore);
             session1.setAttribute("log", list);
             return model;
         }

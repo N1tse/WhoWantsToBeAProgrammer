@@ -81,4 +81,54 @@ public class ScoreDao {
         }
         return 0;
     }
+    
+     public int getCsharpScoreById(int id){
+        int totalJavaScore = 0 ;
+        try{
+        
+            PreparedStatement q = conn.prepareStatement("select sum(score) from scores where scores.user_id = ? and scores.subject_id = 2;");
+            q.setInt(1, id);
+            ResultSet result = q.executeQuery();
+            while(result.next()){
+                totalJavaScore = result.getInt(1);
+            }
+            return totalJavaScore;
+        }catch(Exception e){
+            System.out.println(e);
+        }
+        return 0;
+    }
+     
+     public int getJavascriptpScoreById(int id){
+        int totalJavaScore = 0 ;
+        try{
+        
+            PreparedStatement q = conn.prepareStatement("select sum(score) from scores where scores.user_id = ? and scores.subject_id = 3;");
+            q.setInt(1, id);
+            ResultSet result = q.executeQuery();
+            while(result.next()){
+                totalJavaScore = result.getInt(1);
+            }
+            return totalJavaScore;
+        }catch(Exception e){
+            System.out.println(e);
+        }
+        return 0;
+    }
+         public int getPythonScoreById(int id){
+        int totalJavaScore = 0 ;
+        try{
+        
+            PreparedStatement q = conn.prepareStatement("select sum(score) from scores where scores.user_id = ? and scores.subject_id = 4;");
+            q.setInt(1, id);
+            ResultSet result = q.executeQuery();
+            while(result.next()){
+                totalJavaScore = result.getInt(1);
+            }
+            return totalJavaScore;
+        }catch(Exception e){
+            System.out.println(e);
+        }
+        return 0;
+    }
 }
