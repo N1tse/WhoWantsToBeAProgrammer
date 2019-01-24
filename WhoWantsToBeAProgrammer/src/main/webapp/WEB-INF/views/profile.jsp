@@ -37,6 +37,7 @@
             margin-top: 40px;
             font-size: 20px;
             text-align: center;
+            color: aliceblue;
         }
         .row0{
             color: red;
@@ -98,7 +99,7 @@
                       
                       <div class="contain">  
                         <div class="containJava">
-                          <caption>Top 3 scores in Java</caption>
+                            <caption>Top 3 scores in Java</caption>
                           <table class="table">
                               <thead class="row0">
                                   <tr>

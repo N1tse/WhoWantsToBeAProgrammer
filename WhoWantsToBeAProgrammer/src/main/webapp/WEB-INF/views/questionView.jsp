@@ -40,6 +40,16 @@ body, html{
   height: auto;
   width: 600px;
   padding: 20px;
+  z-index:2;
+}
+#particles-js{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: 50% 50%;
+    position: fixed;
+    top: 0px;
+    z-index: 1;
 }
 h1{
     font-size: 50px;
@@ -159,7 +169,7 @@ input[type=radio]:checked ~ label{
         </style>
     </head>
     <body>
-<!--        <div id="particles-js" > -->
+        
         <div class="text-center" style="width:100%; position: absolute; z-index: 1; background: transparent;">
                     <a class="navbar-brand" href="#" style="margin-top: 80px;">
                             <img src="resources/images/imagesMain.png" width="150px" height="150px" alt="">
@@ -241,9 +251,9 @@ input[type=radio]:checked ~ label{
                 </ul>
             <button id="clickme" type="submit" class="btn btn-danger" >Next</button>
           </form>
-        </div>  
-           
-<!--           </div>  -->
+        </div>
+           <div id="particles-js" >
+           </div>  
     </body>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
     <script src="resources/js/main.js"></script>
