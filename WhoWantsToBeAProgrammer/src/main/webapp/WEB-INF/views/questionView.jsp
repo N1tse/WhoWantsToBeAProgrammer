@@ -44,7 +44,7 @@ body, html{
 h1{
     font-size: 50px;
     text-align: center;
-    padding-top: 20px;
+    padding-top: 70px;
     color: chartreuse;
     opacity: 0.6;
 }
@@ -61,14 +61,14 @@ h2{
   overflow: auto;
 }
 
-ul li{
+.container ul li{
   color: #AAAAAA;
   display: block;
   position: relative;
   float: left;
   width: 100%;
   height: 100px;
-	border-bottom: 1px solid #333;
+  border-bottom: 1px solid #333;
 }
 
 ul li input[type=radio]{
