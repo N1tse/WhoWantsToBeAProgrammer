@@ -57,11 +57,7 @@ public class HomeController {
     
     @RequestMapping("adminLogin")
     public ModelAndView adminLogin(){
-        if(flagMain==false){
-            return new ModelAndView("home");
-        }else{
             return new ModelAndView("adminLogin");
-        }
     }
     
     @RequestMapping("userProfile")
