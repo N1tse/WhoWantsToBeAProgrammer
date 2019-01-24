@@ -19,6 +19,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import pojos.QuestionDao;
 import pojos.Questions;
+import pojos.ScoreDao;
 import pojos.User;
 import pojos.Userdao;
 
@@ -32,6 +33,9 @@ public class HomeController {
     private int rights=0;
     private ArrayList qlist = null;
     private boolean flagMain = false;
+    private User currentUser;
+    private String currentSubject;
+    private int currentSubject_id;
     
     public static HttpSession session() {
         ServletRequestAttributes attr = (ServletRequestAttributes) RequestContextHolder.currentRequestAttributes();
@@ -62,10 +66,18 @@ public class HomeController {
     
     @RequestMapping("userProfile")
     public ModelAndView userProfile(){
+        ScoreDao sdao = new ScoreDao();
+        ArrayList list;
+        ScoreDao scoredao = new ScoreDao();
         if(flagMain==false){
             return new ModelAndView("home");
         }else{
-            return new ModelAndView("userProfile");
+            HttpSession session1 =  session();
+            list = scoredao.getLogById(currentUser.getId());
+            ModelAndView model =  new ModelAndView("userProfile");
+            System.out.println(list.size());
+            session1.setAttribute("log", list);
+            return model;
         }
     }
     
@@ -99,6 +111,7 @@ public class HomeController {
         }else{
             ModelAndView done = new ModelAndView("profile"); 
             flagMain = true;
+            currentUser = u;
             HttpSession session =  session();
             session.setAttribute("u", u);
             return done;
@@ -127,6 +140,7 @@ public class HomeController {
         if(flagMain==false){
             return new ModelAndView("home");
         }else{
+            currentSubject = subject;
             QuestionDao dao = new QuestionDao();
             qlist = dao.getQuestion(subject);
             ModelAndView model = new ModelAndView("questionView");
@@ -137,6 +151,7 @@ public class HomeController {
     
     @PostMapping("turn")
     public ModelAndView turn(Questions question){
+        ScoreDao score = new ScoreDao();
         if(flagMain==false){
             return new ModelAndView("home");
         }else{
@@ -149,14 +164,27 @@ public class HomeController {
                 if(flag){
                     rights = rights + 1;
                 }
-                System.out.println("inside turn controller");
                 for(int i=count; i<qlist.size();){
                     ModelAndView t = new ModelAndView("questionView");
                     count = count + 1;
                     t.addObject("q", qlist.get(i));
                     return t;
                 }
-                System.out.println(rights);
+                switch(currentSubject){
+                    case "java":
+                        currentSubject_id = 1;
+                        break;
+                    case "c##":
+                        currentSubject_id = 2;
+                        break;
+                    case "javascript":
+                        currentSubject_id = 3;
+                        break;
+                    case "full_stack":
+                        currentSubject_id = 4;
+                        break;
+                }
+                score.setLog(rights, currentUser.getId(), currentSubject_id);
                 String msg = "You got "+rights+" right answers";
                 ModelAndView m = new ModelAndView("profile");
                 m.addObject("msg", msg);

@@ -15,6 +15,24 @@ public class Score {
     private String date;
     private int subject_id;
     private int score;
+    private String subject;
+    private String username;
+
+    public String getSubject() {
+        return subject;
+    }
+
+    public void setSubject(String subject) {
+        this.subject = subject;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
     public void setId(int id) {
         this.id = id;

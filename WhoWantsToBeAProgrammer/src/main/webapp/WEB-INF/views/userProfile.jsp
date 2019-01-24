@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -62,11 +63,10 @@
                       </div>
                     </div>
                   </nav>
-    <div id="particles-js">
-        
-    </div>
+                      
         <div class="container" style="position: relative;"><br>
             <img src="${'data:image/jpg;base64,'}${u.image }" style="width: 100px;height: 100px;border-radius: 50%;" >
+            
             <div class="page-header2 text-center">
                 <h2 id="heading2">User Profile Info</h2>
             </div>
@@ -89,9 +89,31 @@
                         <div class="panelscore">Score<label>7</label></div>             
                     </div>
                 </div>
+                
             </div>    
+                <table class="table table-dark">
+                    <thead>
+                      <tr>
+                        <th scope="col">DateTime</th>
+                        <th scope="col">Subject</th>
+                        <th scope="col">Score</th>
+                        <th scope="col">Username</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <c:forEach items="${log}" var="log">
+                      <tr>
+                        <td>${log.date}</td>
+                        <td>${log.subject}</td>
+                        <td>${log.score}</td>
+                        <td>${log.username}</td>
+                      </tr>
+                          </c:forEach>
+                    </tbody>
+                  </table>
     </div>
-                      
+            
+               <div id="particles-js"> </div>          
     </body>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
     <script src="resources/js/main.js"></script>

@@ -54,6 +54,7 @@
                       </ul>
                       <div class="my-2 my-lg-0">
                         <span id="login_name" style="color:white; font-size: 2em;margin-right: 1em;">${u.username}</span>
+                        <span><img src="${'data:image/jpg;base64,'}${u.image }" style="height: 70px;border-radius: 50%;"></span>
                       </div>
                     </div>
                   </nav>

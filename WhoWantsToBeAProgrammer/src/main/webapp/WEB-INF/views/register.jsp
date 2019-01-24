@@ -30,7 +30,7 @@
                 <input type="text" name="fname" placeholder="First-name" class="form-control" />
                 <input type="text" name="lname" placeholder="Last-name" class="form-control" />
                 <input type="password" name="password" placeholder="Password" class="form-control" />
-                <input type="file" name="image"/>
+                <input type="file" name="image" value="resources/images/user_icon.png"/>
                 
 			<button type="submit" class="btn btn-default btn-block btn-custom">Register</button>
 		</div><!-- /.controls -->
