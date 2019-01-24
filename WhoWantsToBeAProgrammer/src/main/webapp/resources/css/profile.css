@@ -1,0 +1,36 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 24 Ιαν 2019, 3:43:07 μμ
+    Author     : theod
+*/
+
+#mainheader{
+    color: white;
+}
+.container{
+        margin-top: 200px;
+    width: 80%;
+    margin-left: 132px;
+    text-align: -webkit-center;
+}
+.jumbotron{
+    background-color: transparent;
+}
+#paragraph1{
+    text-align: left;
+    color: grey;
+}
+#java{
+    
+    margin-top: -168px;
+
+}
+#python{
+    
+    margin-top: -168px;
+
+}

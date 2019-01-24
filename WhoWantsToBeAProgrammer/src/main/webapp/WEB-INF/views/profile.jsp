@@ -13,7 +13,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>HomePage</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <link rel="stylesheet" href="boostrap/css/boostrap.min.css">
+    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="resources/css/profile.css">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
@@ -21,7 +24,7 @@
     <link rel="stylesheet" href="resources/css/main.css" />
 </head>
 <body>
-    <div id="particles-js">
+<!--<div id="particles-js"> </div>-->
             <div class="text-center" style="width:100%; position: absolute; z-index: 1; background: transparent;">
                     <a class="navbar-brand" href="#">
                             <img src="resources/images/imagesMain.png" width="130px" height="130px" alt="">
@@ -50,6 +53,7 @@
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item"  style="color:black;" href="javaQuestionsController${"javascript"}">JAVASCRIPT</a>
                           </div>
+                          
                         </li>
                       </ul>
                       <div class="my-2 my-lg-0">
@@ -60,7 +64,66 @@
                   </nav>
                       <h5>${msg}</h5>
 
-    </div>
+   
+                      
+                      <div id="container1" class="container">
+                          
+                          <div class="jumbotron" >
+                              <h1 id="mainheader">
+                                C#
+                              </h1>
+                              <div id="paragraph1">
+                              <p>C# is a general object-oriented programming (OOP) language for networking and Web development. C# is specified as a common language infrastructure (CLI) language.
+
+In January 1999, Dutch software engineer Anders Hejlsberg formed a team to develop C# as a complement to Microsoft’s NET framework. Initially, C# was developed as C-Like Object Oriented Language (Cool). The actual name was changed to avert potential trademark issues. In January 2000, NET was released as C#. Its NET framework promotes multiple Web technologies.
+
+The term is sometimes spelled as C Sharp or C-Sharp.</p>
+                              </div>
+                          </div>
+                          
+                      </div>
+                      <div id="java">
+                       <div class="container">
+                          <div class="jumbotron" >
+                              <h1 id="mainheader">
+                                Java
+                              </h1>
+                              <div id="paragraph1">
+                              <p>ava is a programming language and computing platform first released by Sun Microsystems in 1995. There are lots of applications and websites that will not work unless you have Java installed, and more are created every day. Java is fast, secure, and reliable. From laptops to datacenters, game consoles to scientific supercomputers, cell phones to the Internet, Java is everywhere!
+
+Is Java free to download?
+Yes, Java is free to download. Get the latest version at java.com.
+
+If you are building an embedded or consumer device and would like to include Java, please contact Oracle for more information on including Java in your device.
+
+Why should I upgrade to the latest Java version?
+The latest Java version contains important enhancements to improve performance, stability and security of the Java applications that run on your machine. Installing this free update will ensure that your Java applications continue to run safely and efficiently.
+
+</p>
+                              </div>
+                          </div>
+                          
+                      </div>
+                      </div>  
+                      <div id="python">
+                       <div class="container">
+                          <div class="jumbotron" >
+                              <h1 id="mainheader">
+                                Python
+                              </h1>
+                              <div id="paragraph1">
+                              <p>Python is an interpreted, object-oriented, high-level programming language with dynamic semantics. Its high-level built in data structures, combined with dynamic typing and dynamic binding, make it very attractive for Rapid Application Development, as well as for use as a scripting or glue language to connect existing components together. Python's simple, easy to learn syntax emphasizes readability and therefore reduces the cost of program maintenance. Python supports modules and packages, which encourages program modularity and code reuse. The Python interpreter and the extensive standard library are available in source or binary form without charge for all major platforms, and can be freely distributed.
+
+Often, programmers fall in love with Python because of the increased productivity it provides. Since there is no compilation step, the edit-test-debug cycle is incredibly fast. Debugging Python programs is easy: a bug or bad input will never cause a segmentation fault. Instead, when the interpreter discovers an error, it raises an exception. When the program doesn't catch the exception, the interpreter prints a stack trace. A source level debugger allows inspection of local and global variables, evaluation of arbitrary expressions, setting breakpoints, stepping through the code a line at a time, and so on. The debugger is written in Python itself, testifying to Python's introspective power. On the other hand, often the quickest way to debug a program is to add a few print statements to the source: the fast edit-test-debug cycle makes this simple approach very effective.</p>
+                              </div>
+                          </div>
+                           
+
+                      </div>
+
+                          </div>
+                      <a  href="#container1" id="scroll-to-bottom" style="color: red;">LINK</a>
+       
 </body>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
 <script src="resources/js/main.js"></script>

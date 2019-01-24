@@ -64,32 +64,32 @@
                     </div>
                   </nav>
                       
-        <div class="container" style="position: relative;"><br>
+        <div class="container" style="position: absolute; margin-top: 200px;"><br>
             <img src="${'data:image/jpg;base64,'}${u.image }" style="width: 100px;height: 100px;border-radius: 50%;" >
             
             <div class="page-header2 text-center">
                 <h2 id="heading2">User Profile Info</h2>
             </div>
             <div class="containerC">
-                <div class="column">
+                <div class="column" style="margin-bottom: 10px; margin-top: 30px;">
                     <div class="panel">
                         <div class="panelbody">Subject<label>Java</label></div>
                         <div class="panelscore">Score<label>${javaScore}</label></div>            
                     </div>
                 </div>
-                <div class="column">
+                <div class="column" style="margin-bottom: 10px;">
                     <div class="panel">
                         <div class="panelbody">Subject<label>C#</label></div>
                         <div class="panelscore">Score<label>${cSharpScore}</label></div>              
                     </div>
                 </div>
-                <div class="column">
+                <div class="column" style="margin-bottom: 10px;">
                     <div class="panel">
                         <div class="panelbody">Subject<label>Javascript</label></div>
                         <div class="panelscore">Score<label>${javascriptScore}</label></div>             
                     </div>
                 </div>
-                    <div class="column">
+                    <div class="column" style="margin-bottom: 10px;">
                     <div class="panel">
                         <div class="panelbody">Subject<label>Python</label></div>
                         <div class="panelscore">Score<label>${pythonScore}</label></div>             
