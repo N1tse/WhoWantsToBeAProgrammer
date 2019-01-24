@@ -22,12 +22,21 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="resources/css/main.css" />
+    <style>
+        #logoutid{
+            color: white;
+            font-size: 20px;
+        }
+        #okai{
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
 </head>
 <body>
-<!--<div id="particles-js"> </div>-->
             <div class="text-center" style="width:100%; position: absolute; z-index: 1; background: transparent;">
-                    <a class="navbar-brand" href="#">
-                            <img src="resources/images/imagesMain.png" width="130px" height="130px" alt="">
+                <a class="navbar-brand" href="#" style="margin-top: 80px;">
+                            <img src="resources/images/imagesMain.png" width="150px" height="150px" alt="">
                     </a>
                 </div>
             <nav class="navbar navbar-expand-lg navbar-light" style="background: #D9534F;">
@@ -38,7 +47,7 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent" style="z-index:3;">
                       <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                          <a class="nav-link" style="color:white;" href="#">HOME <span class="sr-only">(current)</span></a>
+                          <a class="nav-link" style="color:white;" href="mainpage">HOME <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link" style="color:white;" href="userProfile">PROFILE</a>
@@ -59,10 +68,10 @@
                           
                         </li>
                       </ul>
-                      <div class="my-2 my-lg-0">
+                      <div class="my-2 my-lg-0" id="okai">
                         <span id="login_name" style="color:white; font-size: 2em;margin-right: 1em;">${u.username}</span>
                         <span><img src="${'data:image/jpg;base64,'}${u.image }" style="height: 70px;border-radius: 50%;"></span>
-                        <span><a href="logout"><small>LogOut</small></a></span>
+                        <span><a href="logout" id="logoutid">LogOut</a></span>
                       </div>
                     </div>
                   </nav>

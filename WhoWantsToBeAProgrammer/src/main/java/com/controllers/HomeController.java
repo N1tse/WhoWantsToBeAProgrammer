@@ -65,6 +65,11 @@ public class HomeController {
         return new ModelAndView("home");
     }
     
+    @RequestMapping("mainpage")
+    public ModelAndView returnToMain(){
+        return new ModelAndView("profile");
+    }
+    
     @RequestMapping("userProfile")
     public ModelAndView userProfile(){
         ScoreDao sdao = new ScoreDao();

@@ -9,9 +9,7 @@ and open the template in the editor.
 */
 .container{
     background-color: white;
-    position: absolute;
-    top: 50%;
-    left: 13%;
+    margin-top:200px;
 }
 .containerC{
     height: 80%;
@@ -19,6 +17,11 @@ and open the template in the editor.
     flex-direction: column;
     justify-content: space-around;
 }
+
+.column{
+    margin-top:40px;
+}
+
 #heading2{
     text-align: center;
     border-bottom-style: groove;

@@ -145,14 +145,24 @@ input[type=radio]:checked ~ label{
 #clickme:hover{
     transform: scale(1.5);
 }
+
+#logoutid{
+    color: white;
+    font-size: 20px;
+    
+}
+#okai{
+    display: flex;
+    flex-direction: column;
+    }
             
         </style>
     </head>
     <body>
-        <div id="particles-js" > 
+<!--        <div id="particles-js" > -->
         <div class="text-center" style="width:100%; position: absolute; z-index: 1; background: transparent;">
-                    <a class="navbar-brand" href="#">
-                            <img src="resources/images/imagesMain.png" width="130px" height="130px" alt="">
+                    <a class="navbar-brand" href="#" style="margin-top: 80px;">
+                            <img src="resources/images/imagesMain.png" width="150px" height="150px" alt="">
                     </a>
         </div>
         <nav class="navbar navbar-expand-lg navbar-light" style="background: #D9534F;">
@@ -163,7 +173,7 @@ input[type=radio]:checked ~ label{
                     <div class="collapse navbar-collapse" id="navbarSupportedContent" style="z-index:3;">
                       <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                          <a class="nav-link" style="color:white;" href="profile">HOME <span class="sr-only">(current)</span></a>
+                          <a class="nav-link" style="color:white;" href="mainpage">HOME <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link" style="color:white;" href="userProfile">PROFILE</a>
@@ -173,15 +183,21 @@ input[type=radio]:checked ~ label{
                             COURSES
                           </a>
                           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item"  style="color:black;" href="#">JAVA</a>
-                            <a class="dropdown-item"  style="color:black;" href="#">C#</a>
+                            <a class="dropdown-item"  style="color:black;" href="QuestionsController${"java"}">JAVA</a>
+                             <div class="dropdown-divider"></div>
+                            <a class="dropdown-item"  style="color:black;" href="QuestionsController${"c_sharp"}">C#</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item"  style="color:black;" href="#">JAVASCRIPT</a>
+                            <a class="dropdown-item"  style="color:black;" href="QuestionsController${"javascript"}">JAVASCRIPT</a>
+                             <div class="dropdown-divider"></div>
+                             <a class="dropdown-item"  style="color:black;" href="QuestionsController${"python"}">PYTHON</a>
                           </div>
+                          
                         </li>
                       </ul>
-                      <div class="my-2 my-lg-0">
+                      <div class="my-2 my-lg-0" id="okai">
                         <span id="login_name" style="color:white; font-size: 2em;margin-right: 1em;">${u.username}</span>
+                        <span><img src="${'data:image/jpg;base64,'}${u.image }" style="height: 70px;border-radius: 50%;"></span>
+                        <span><a href="logout" id="logoutid">LogOut</a></span>
                       </div>
                     </div>
                   </nav>
@@ -227,7 +243,7 @@ input[type=radio]:checked ~ label{
           </form>
         </div>  
            
-           </div>  
+<!--           </div>  -->
     </body>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
     <script src="resources/js/main.js"></script>
