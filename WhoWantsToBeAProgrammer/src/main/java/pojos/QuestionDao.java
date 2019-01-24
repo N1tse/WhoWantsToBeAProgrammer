@@ -25,8 +25,7 @@ public class QuestionDao {
         ArrayList questions = new ArrayList();
         try{
         
-            PreparedStatement q = conn.prepareStatement("select * from questions inner join subjects on questions.subject_id = subjects.subject_id\n" +
-                                                        "WHERE subjects.name = '"+subject+"';");
+            PreparedStatement q = conn.prepareStatement("select * from questions inner join subjects on questions.subject_id = subjects.subject_id where name = '"+subject+"' order by rand() limit 10;");
             ResultSet result = q.executeQuery();
             while(result.next()){
                 Questions a = new Questions();

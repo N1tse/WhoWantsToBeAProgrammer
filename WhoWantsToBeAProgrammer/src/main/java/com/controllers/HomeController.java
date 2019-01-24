@@ -31,6 +31,7 @@ public class HomeController {
     private int count = 1;
     private int rights=0;
     private ArrayList qlist = null;
+    private boolean flagMain = false;
     
     public static HttpSession session() {
         ServletRequestAttributes attr = (ServletRequestAttributes) RequestContextHolder.currentRequestAttributes();
@@ -52,17 +53,29 @@ public class HomeController {
     
     @RequestMapping("adminLogin")
     public ModelAndView adminLogin(){
-        return new ModelAndView("adminLogin");
+        if(flagMain==false){
+            return new ModelAndView("home");
+        }else{
+            return new ModelAndView("adminLogin");
+        }
     }
     
     @RequestMapping("userProfile")
     public ModelAndView userProfile(){
-        return new ModelAndView("userProfile");
+        if(flagMain==false){
+            return new ModelAndView("home");
+        }else{
+            return new ModelAndView("userProfile");
+        }
     }
     
     @RequestMapping("profile")
     public ModelAndView profile(){
-        return new ModelAndView("profile");
+        if(flagMain==false){
+            return new ModelAndView("home");
+        }else{
+            return new ModelAndView("profile");
+        }
     }
     
     @PostMapping("addUserController")
@@ -85,6 +98,7 @@ public class HomeController {
             return model;
         }else{
             ModelAndView done = new ModelAndView("profile"); 
+            flagMain = true;
             HttpSession session =  session();
             session.setAttribute("u", u);
             return done;
@@ -99,6 +113,7 @@ public class HomeController {
             ModelAndView model = new ModelAndView("adminLogin");           
             return model;
         }else{
+            flagMain = true;
             ModelAndView done = new ModelAndView("homeAdmin"); 
             HttpSession session =  session();
             session.setAttribute("u", u);
@@ -109,39 +124,46 @@ public class HomeController {
 
     @RequestMapping("javaQuestionsController{subject}")
     public ModelAndView javaQuestions(@PathVariable("subject") String subject){
-        System.out.println(subject);
-        QuestionDao dao = new QuestionDao();
-        qlist = dao.getQuestion(subject);
-        ModelAndView model = new ModelAndView("questionView");
-        model.addObject("q", qlist.get(0));
-        return model;
+        if(flagMain==false){
+            return new ModelAndView("home");
+        }else{
+            QuestionDao dao = new QuestionDao();
+            qlist = dao.getQuestion(subject);
+            ModelAndView model = new ModelAndView("questionView");
+            model.addObject("q", qlist.get(0));
+            return model;
+        }
     }
     
     @PostMapping("turn")
     public ModelAndView turn(Questions question){
-        QuestionDao qdao = new QuestionDao();
-        System.out.println("inside turn controller");
-        System.out.println(question.getCorrect());
-        boolean flag = qdao.checkQuestion(question.getCorrect(), question.getId());
-        System.out.println(question.getId());
-        System.out.println(flag);
-        if(flag){
-            rights = rights + 1;
+        if(flagMain==false){
+            return new ModelAndView("home");
+        }else{
+                QuestionDao qdao = new QuestionDao();
+                System.out.println("inside turn controller");
+                System.out.println(question.getCorrect());
+                boolean flag = qdao.checkQuestion(question.getCorrect(), question.getId());
+                System.out.println(question.getId());
+                System.out.println(flag);
+                if(flag){
+                    rights = rights + 1;
+                }
+                System.out.println("inside turn controller");
+                for(int i=count; i<qlist.size();){
+                    ModelAndView t = new ModelAndView("questionView");
+                    count = count + 1;
+                    t.addObject("q", qlist.get(i));
+                    return t;
+                }
+                System.out.println(rights);
+                String msg = "You got "+rights+" right answers";
+                ModelAndView m = new ModelAndView("profile");
+                m.addObject("msg", msg);
+                count = 1 ;
+                rights = 0 ;
+                return m;
         }
-        System.out.println("inside turn controller");
-        for(int i=count; i<qlist.size();){
-            ModelAndView t = new ModelAndView("questionView");
-            count = count + 1;
-            t.addObject("q", qlist.get(i));
-            return t;
-        }
-        System.out.println(rights);
-        String msg = "You got "+rights+" right answers";
-        ModelAndView m = new ModelAndView("profile");
-        m.addObject("msg", msg);
-        count = 1 ;
-        rights = 0 ;
-        return m;
     } 
     
     
