@@ -74,7 +74,7 @@
                 <div class="column">
                     <div class="panel">
                         <div class="panelbody">Subject<label>Java</label></div>
-                        <div class="panelscore">Score<label>1</label></div>            
+                        <div class="panelscore">Score<label>${javaScore}</label></div>            
                     </div>
                 </div>
                 <div class="column">

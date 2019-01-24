@@ -63,6 +63,7 @@ public class HomeController {
     @RequestMapping("userProfile")
     public ModelAndView userProfile(){
         ScoreDao sdao = new ScoreDao();
+        int javaScore = 0;
         ArrayList list;
         ScoreDao scoredao = new ScoreDao();
         if(flagMain==false){
@@ -70,8 +71,10 @@ public class HomeController {
         }else{
             HttpSession session1 =  session();
             list = scoredao.getLogById(currentUser.getId());
+            javaScore = scoredao.getJavaScoreById(currentUser.getId());
             ModelAndView model =  new ModelAndView("userProfile");
             System.out.println(list.size());
+            model.addObject("javaScore", javaScore);
             session1.setAttribute("log", list);
             return model;
         }

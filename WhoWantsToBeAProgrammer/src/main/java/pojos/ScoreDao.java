@@ -63,4 +63,22 @@ public class ScoreDao {
         }
         return null;
     }
+    
+    
+    public int getJavaScoreById(int id){
+        int totalJavaScore = 0 ;
+        try{
+        
+            PreparedStatement q = conn.prepareStatement("select sum(score) from scores where scores.user_id = ? and scores.subject_id = 1;");
+            q.setInt(1, id);
+            ResultSet result = q.executeQuery();
+            while(result.next()){
+                totalJavaScore = result.getInt(1);
+            }
+            return totalJavaScore;
+        }catch(Exception e){
+            System.out.println(e);
+        }
+        return 0;
+    }
 }
