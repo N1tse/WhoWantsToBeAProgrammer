@@ -131,4 +131,33 @@ public class ScoreDao {
         }
         return 0;
     }
+         
+         
+         public ArrayList top3(String subject){
+             ArrayList list = new ArrayList();
+             Connection getCon = getConnection();
+             try{
+                 System.out.println("inside top3 method");
+                 PreparedStatement q = getCon.prepareStatement("SELECT username, sum(score) FROM dteam.scores\n" +
+                                                                "INNER JOIN users ON scores.user_id = users.user_id\n" +
+                                                                "INNER JOIN subjects ON scores.subject_id = subjects.subject_id\n" +
+                                                                "WHERE name='"+subject+"'\n" +
+                                                                "group by username\n" +
+                                                                "order by sum(score) desc\n" +
+                                                                "limit 3;");
+             
+                 ResultSet result = q.executeQuery();
+                 while(result.next()){
+                     Score score  = new Score();
+                     score.setUsername(result.getString(1));
+                     score.setScore(result.getInt(2));
+                     list.add(score);
+                     System.out.println(score.getUsername());
+                 }
+                 return list;
+             }catch(SQLException e){
+                 System.out.println(e);
+             }
+             return null;
+         }
 }

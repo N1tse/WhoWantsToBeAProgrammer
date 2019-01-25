@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,7 +35,7 @@
         .contain{
             display: flex;
             justify-content: space-around;
-            margin-top: 40px;
+            margin-top: 150px;
             font-size: 20px;
             text-align: center;
             color: aliceblue;
@@ -111,22 +112,22 @@
                               <tbody class="row1">
                                   <tr>
                                         <th scope="col">1</th>
-                                        <th scope="col">nassos</th>
-                                        <th scope="col">40</th>
+                                        <th scope="col">${topjava.get(0).username}</th>
+                                        <th scope="col">${topjava.get(0).score}</th>
                                   </tr>
                               </tbody>
                               <tbody class="row2">
                                   <tr>
                                         <th scope="col">2</th>
-                                        <th scope="col">asdf</th>
-                                        <th scope="col">34</th>
+                                        <th scope="col">${topjava.get(1).username}</th>
+                                        <th scope="col">${topjava.get(1).score}</th>
                                   </tr>
                               </tbody>
                               <tbody class="row3">
                                   <tr>
-                                        <th scope="col">1</th>
-                                        <th scope="col">asd</th>
-                                        <th scope="col">33</th>
+                                        <th scope="col">3</th>
+                                        <th scope="col">${topjava.get(2).username}</th>
+                                        <th scope="col">${topjava.get(2).score}</th>
                                   </tr>
                               </tbody>
                           </table>    
@@ -144,22 +145,22 @@
                               <tbody class="row1">
                                   <tr>
                                         <th scope="col">1</th>
-                                        <th scope="col">nassos</th>
-                                        <th scope="col">40</th>
+                                        <th scope="col">${topcsharp.get(0).username}</th>
+                                        <th scope="col">${topcsharp.get(0).score}</th>
                                   </tr>
                               </tbody >
                               <tbody class="row2">
                                   <tr>
                                         <th scope="col">2</th>
-                                        <th scope="col">asdf</th>
-                                        <th scope="col">34</th>
+                                        <th scope="col">${topcsharp.get(1).username}</th>
+                                        <th scope="col">${topcsharp.get(1).score}</th>
                                   </tr>
                               </tbody>
                               <tbody class="row3">
                                   <tr>
-                                        <th scope="col">1</th>
-                                        <th scope="col">asd</th>
-                                        <th scope="col">33</th>
+                                        <th scope="col">3</th>
+                                        <th scope="col">${topcsharp.get(2).username}</th>
+                                        <th scope="col">${topcsharp.get(2).score}</th>
                                   </tr>
                               </tbody>
                           </table>    
@@ -177,22 +178,22 @@
                               <tbody class="row1">
                                   <tr>
                                         <th scope="col">1</th>
-                                        <th scope="col">nassos</th>
-                                        <th scope="col">40</th>
+                                        <th scope="col">${topjavascript.get(0).username}</th>
+                                        <th scope="col">${topjavascript.get(0).score}</th>
                                   </tr>
                               </tbody>
                               <tbody class="row2">
                                   <tr>
                                         <th scope="col">2</th>
-                                        <th scope="col">asdf</th>
-                                        <th scope="col">34</th>
+                                        <th scope="col">${topjavascript.get(1).username}</th>
+                                        <th scope="col">${topjavascript.get(1).score}</th>
                                   </tr>
                               </tbody>
                               <tbody class="row3">
                                   <tr>
-                                        <th scope="col">1</th>
-                                        <th scope="col">asd</th>
-                                        <th scope="col">33</th>
+                                        <th scope="col">3</th>
+                                        <th scope="col">${topjavascript.get(2).username}</th>
+                                        <th scope="col">${topjavascript.get(2).score}</th>
                                   </tr>
                               </tbody>
                           </table>    
@@ -210,30 +211,30 @@
                               <tbody class="row1">
                                   <tr>
                                         <th scope="col">1</th>
-                                        <th scope="col">nassos</th>
-                                        <th scope="col">40</th>
+                                        <th scope="col">${toppython.get(0).username}</th>
+                                        <th scope="col">${toppython.get(0).score}</th>
                                   </tr>
                               </tbody>
                               <tbody class="row2">
                                   <tr>
                                         <th scope="col">2</th>
-                                        <th scope="col">asdf</th>
-                                        <th scope="col">34</th>
+                                        <th scope="col">${toppython.get(1).username}</th>
+                                        <th scope="col">${toppython.get(1).score}</th>
                                   </tr>
                               </tbody>
                               <tbody class="row3">
                                   <tr>
-                                        <th scope="col">1</th>
-                                        <th scope="col">asd</th>
-                                        <th scope="col">33</th>
+                                        <th scope="col">3</th>
+                                        <th scope="col">${toppython.get(2).username}</th>
+                                        <th scope="col">${toppython.get(2).score}</th>
                                   </tr>
                               </tbody>
                           </table>    
                       </div>
                     </div>
-                      
-                      <div id="container1" class="container">
-                          
+                                  <div id="particles-js" ></div>
+<!--                      <div id="container1" class="container"style="margin-left:20%;">-->
+<!--                          
                           <div class="jumbotron" >
                               <h1 id="mainheader">
                                 C#
@@ -248,8 +249,8 @@ The term is sometimes spelled as C Sharp or C-Sharp.</p>
                           </div>
                           
                       </div>
-                      <div id="java">
-                       <div class="container">
+                      <div id="java"style="margin-left:20%;">
+                          <div class="container">
                           <div class="jumbotron" >
                               <h1 id="mainheader">
                                 Java
@@ -271,7 +272,7 @@ The latest Java version contains important enhancements to improve performance, 
                           
                       </div>
                       </div>  
-                      <div id="python">
+                      <div id="python" style="margin-left:20%;">
                        <div class="container">
                           <div class="jumbotron" >
                               <h1 id="mainheader">
@@ -288,7 +289,7 @@ Often, programmers fall in love with Python because of the increased productivit
                       </div>
 
                           </div>
-                      <a  href="#container1" id="scroll-to-bottom" style="color: red;">LINK</a>
+                      <a  href="#container1" id="scroll-to-bottom" style="color: red;">LINK</a>-->
        
 </body>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>

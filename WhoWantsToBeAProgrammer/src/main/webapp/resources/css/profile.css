@@ -12,9 +12,8 @@ and open the template in the editor.
     color: white;
 }
 .container{
-        margin-top: 200px;
-    width: 80%;
-    margin-left: 132px;
+    margin-top: 200px;
+    width: 100%;
     text-align: -webkit-center;
 }
 .jumbotron{

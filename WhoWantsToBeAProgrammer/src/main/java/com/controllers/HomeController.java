@@ -121,16 +121,29 @@ public class HomeController {
     //testComment
     @PostMapping("loginController")
     public ModelAndView loginCheck(User user){
+        ScoreDao scoreDao = new ScoreDao();
+        ArrayList topJava;
+        ArrayList topCsharp;
+        ArrayList topJs;
+        ArrayList topPython;
         Userdao dao = new Userdao();     
         User u = dao.login(user.getUsername(), user.getPassword());
         if(u==null){
             ModelAndView model = new ModelAndView("home");           
             return model;
         }else{
+            topJava = scoreDao.top3("java");
+            topCsharp = scoreDao.top3("c_sharp");
+            topJs = scoreDao.top3("javascript");
+            topPython = scoreDao.top3("python");
             ModelAndView done = new ModelAndView("profile"); 
             flagMain = true;
             currentUser = u;
             HttpSession session =  session();
+            session.setAttribute("topjava", topJava);
+            session.setAttribute("topcsharp", topCsharp);
+            session.setAttribute("topjavascript", topJs);
+            session.setAttribute("toppython", topPython);
             session.setAttribute("u", u);
             return done;
         }
