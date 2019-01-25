@@ -201,7 +201,7 @@ public class Userdao {
 	return status;
 }
     
-      public Questions addQuestion (String question,String a, String b, String c, String d, String correct, int subject_id)throws IOException{
+      public String addQuestion(String question,String a, String b, String c, String d, String correct, int subject_id)throws IOException{
           Connection con=getConnection(); 
        
 	try{          
@@ -214,6 +214,7 @@ public class Userdao {
                 ps.setString(6,correct);
                 ps.setInt(7,subject_id);
 		ps.executeUpdate();
+                return "done";
 	}catch(SQLException e){
             System.out.println(e);  
         }
@@ -222,8 +223,23 @@ public class Userdao {
             closeConnection();
         }
 	
-        return null;
+        return "erro";
   }
+      
+      
+      public String deleteQuestion(int id){
+          Connection con=getConnection(); 
+          try{
+              PreparedStatement q = con.prepareStatement("delete from questions where question_id=?");
+              q.setInt(1,id);
+              q.executeUpdate();
+              return "done";
+          }catch(Exception e){
+              System.out.println(e);
+          }
+          return "error";
+      
+      }
        
        
        

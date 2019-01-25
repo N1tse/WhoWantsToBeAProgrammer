@@ -18,10 +18,11 @@
     </head>
     <body>
         <a href="viewQuestions"><button type="button" class="btn btn-secondary">All Question</button></a>
+        <a href="addQuestion"><button type="button" class="btn btn-secondary">Add Question</button></a>
         <a href="logoutAdmin"><button type="button" class="btn btn-secondary">Log Out</button></a>
         
         <h1>${list.size()}</h1>
-
+        <p>${insert}</p>
 <table class="table">
   <thead>
     <tr>
@@ -47,6 +48,7 @@
             <td>${q.correct}</td>
             <td>${q.subject}</td>
             <td><a href="editQuestion${q.id}"><button type="button" class="btn btn-primary">edit</button></a></td>
+            <td><a href="deleteQ${q.id}"><button type="button" class="btn btn-danger">delete</button></a></td>
             <td><a href></a></td>
             </tr>
        
