@@ -33,7 +33,7 @@ import pojos.Userdao;
  */
 @Controller
 public class AdminLoginController {
-   private boolean flagMain = false;
+   boolean flagMain = false;
  
     @RequestMapping("viewQuestions")
     public ModelAndView question(Questions quest){
@@ -42,7 +42,7 @@ public class AdminLoginController {
         list = dao.getQuestion();
         
       ModelAndView model = new ModelAndView("homeAdmin");
-       
+       flagMain = true;
       model.addObject("list", list);
       
     return model;
@@ -64,9 +64,13 @@ public class AdminLoginController {
    @PostMapping("updateQuestion{id}")
    
     public ModelAndView updateQuestion(@PathVariable("id") int id,Questions quest){
-     Userdao dao = new Userdao();
-    dao.updateQuestion(id,quest.getQuestion(),quest.getA(),quest.getB(),quest.getC(),quest.getD(),quest.getCorrect());
-    return new ModelAndView("homeAdmin");
+        if(flagMain==false){
+            return new ModelAndView("adminLogin");
+        }else{
+            Userdao dao = new Userdao();
+           dao.updateQuestion(id,quest.getQuestion(),quest.getA(),quest.getB(),quest.getC(),quest.getD(),quest.getCorrect());
+           return new ModelAndView("homeAdmin");
+        }
     
     }
     
@@ -83,42 +87,62 @@ public class AdminLoginController {
        
     @RequestMapping("addQuestion")
     public ModelAndView addQ(){
-        return new ModelAndView("addQuestion");
+        if(flagMain==false){
+            return new ModelAndView("adminLogin");
+        }else{
+            return new ModelAndView("addQuestion");
+        }
     }
     
     @PostMapping("addQ")
     public ModelAndView addQuestion(@ModelAttribute("question") Questions q) throws IOException{
-        Userdao udao = new Userdao();
-        String insert = null;
-        insert = udao.addQuestion(q.getQuestion(), q.getA(), q.getB(), q.getC(), q.getD(), q.getCorrect(), q.getSubject_id());
-        ModelAndView m = new ModelAndView("homeAdmin");
-        m.addObject("insert", insert);
-        return m;
+        if(flagMain==false){
+            return new ModelAndView("adminLogin");
+        }else{
+            Userdao udao = new Userdao();
+            String insert = null;
+            insert = udao.addQuestion(q.getQuestion(), q.getA(), q.getB(), q.getC(), q.getD(), q.getCorrect(), q.getSubject_id());
+            ModelAndView m = new ModelAndView("homeAdmin");
+            m.addObject("insert", insert);
+            return m;
+        }
     }
     
     @RequestMapping("deleteQ{id}")
     public ModelAndView deleteView(@PathVariable("id") int id){
-       Userdao dao = new Userdao();
-       Questions quest;
-       quest=dao.getQuestionById(id);
-       
-        ModelAndView model = new ModelAndView("deleteView");
-            model.addObject("quest", quest);
-            return model;
+        if(flagMain==false){
+            return new ModelAndView("adminLogin");
+        }else{
+            Userdao dao = new Userdao();
+            Questions quest;
+            quest=dao.getQuestionById(id);
+
+             ModelAndView model = new ModelAndView("deleteView");
+                 model.addObject("quest", quest);
+                 return model;
+        }
     }
     
     @RequestMapping("homeAdmin")
     public ModelAndView returned(){
-        return new ModelAndView("homeAdmin");
+        if(flagMain==false){
+            return new ModelAndView("adminLogin");
+        }else{
+            return new ModelAndView("homeAdmin");
+        }
     }
     
     @PostMapping("deleteQuestion{id}")
     public ModelAndView deleteQuestion(@PathVariable("id") int id){
-        Userdao userdao = new Userdao();
-        String message = userdao.deleteQuestion(id);
-        ModelAndView m = new ModelAndView("homeAdmin");
-        m.addObject("insert", message);
-        return m;
+        if(flagMain==false){
+            return new ModelAndView("adminLogin");
+        }else{
+                Userdao userdao = new Userdao();
+                String message = userdao.deleteQuestion(id);
+                ModelAndView m = new ModelAndView("homeAdmin");
+                m.addObject("insert", message);
+                return m;
+        }
     }
     
     

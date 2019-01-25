@@ -188,8 +188,8 @@ input[type=radio]:checked ~ label{
                         <li class="nav-item">
                           <a class="nav-link" style="color:white;" href="userProfile">PROFILE</a>
                         </li>
-                        <li class="nav-item dropdown">
-                          <a class="nav-link dropdown-toggle"  style="color:white;" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <li class="nav-item dropdown active">
+                          <a class="nav-link dropdown-toggle active"  style="color:white;" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             COURSES
                           </a>
                           <div class="dropdown-menu" aria-labelledby="navbarDropdown">

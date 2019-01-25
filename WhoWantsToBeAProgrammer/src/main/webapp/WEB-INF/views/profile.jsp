@@ -68,7 +68,7 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent" style="z-index:3;">
                       <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                          <a class="nav-link" style="color:white;" href="mainpage">HOME <span class="sr-only">(current)</span></a>
+                          <a class="nav-link active" style="color:white;" href="mainpage">HOME <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link" style="color:white;" href="userProfile">PROFILE</a>
