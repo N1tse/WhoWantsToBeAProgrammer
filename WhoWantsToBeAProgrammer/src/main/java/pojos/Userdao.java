@@ -158,9 +158,76 @@ public class Userdao {
 	return null;
      }
       
-      
+       public  Questions getQuestionById(int id){
+	Questions q = null;
+	try{
+		Connection con=getConnection();
+		PreparedStatement ps=con.prepareStatement("select * from questions where question_id=?");
+		ps.setInt(1,id);
+		ResultSet rs=ps.executeQuery();
+		while(rs.next()){
+			q=new Questions();
+			q.setId(rs.getInt("question_id"));
+			q.setQuestion(rs.getString("question"));
+			q.setA(rs.getString("a"));
+			q.setB(rs.getString("b"));
+			q.setC(rs.getString("c"));
+                        q.setD(rs.getString("d"));
+                        q.setCorrect(rs.getString("correct"));
+                        
+			
+		}return q;
+	}catch(Exception e){System.out.println(e);}
+	return null;
+}   
     
+       
+       public int updateQuestion(int id,String question,String a,String b,String c,String d,String correct){
+	int status=0;
+	try{
+		Connection con=getConnection();
+		PreparedStatement ps=con.prepareStatement("update questions set question=?,a=?,b=?,c=?,d=?,correct=? where question_id=?");
+		ps.setString(1,question);
+		ps.setString(2,a);
+		ps.setString(3,b);
+		ps.setString(4,c);
+                ps.setString(5,d);
+                ps.setString(6,correct);
+                ps.setInt(7,id);
+               
+		status=ps.executeUpdate();
+                System.out.println("upadated");
+	}catch(Exception e){System.out.println(e);}
+	return status;
+}
     
+      public Questions addQuestion (String question,String a, String b, String c, String d, String correct, int subject_id)throws IOException{
+          Connection con=getConnection(); 
+       
+	try{          
+		PreparedStatement ps=con.prepareStatement("INSERT INTO questions(question,a,b,c,d,correct,subject_id) VALUES(?,?,?,?,?,?,?)");
+		ps.setString(1,question);
+		ps.setString(2,a);
+		ps.setString(3,b);
+		ps.setString(4,c);
+		ps.setString(5,d);
+                ps.setString(6,correct);
+                ps.setInt(7,subject_id);
+		ps.executeUpdate();
+	}catch(SQLException e){
+            System.out.println(e);  
+        }
+        
+        finally{
+            closeConnection();
+        }
+	
+        return null;
+  }
+       
+       
+       
+       
     
 }
 

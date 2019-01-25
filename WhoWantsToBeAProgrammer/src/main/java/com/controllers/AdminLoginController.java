@@ -5,22 +5,20 @@
  */
 package com.controllers;
 
-import java.io.IOException;
+
 import java.util.ArrayList;
-import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.context.request.RequestContextHolder;
-import org.springframework.web.context.request.ServletRequestAttributes;
-import org.springframework.web.multipart.MultipartFile;
+;
 import org.springframework.web.servlet.ModelAndView;
-import pojos.QuestionDao;
+
 import pojos.Questions;
-import pojos.ScoreDao;
-import pojos.User;
+
 import pojos.Userdao;
 
 /**
@@ -29,7 +27,7 @@ import pojos.Userdao;
  */
 @Controller
 public class AdminLoginController {
-   
+   private boolean flagMain = false;
  
     @RequestMapping("viewQuestions")
     public ModelAndView question(Questions quest){
@@ -38,14 +36,44 @@ public class AdminLoginController {
         list = dao.getQuestion();
         
       ModelAndView model = new ModelAndView("homeAdmin");
-      
-      
+       
       model.addObject("list", list);
       
     return model;
     }
     
+    @GetMapping("editQuestion{id}")
     
+   public ModelAndView editQuestion(@PathVariable("id") int id){
+       Userdao dao = new Userdao();
+       Questions quest = new Questions();
+       quest=dao.getQuestionById(id);
+       
+        ModelAndView model = new ModelAndView("editQuestion");
+            model.addObject("quest", quest);
+        
+      return model;  
+   }
+   
+   @PostMapping("updateQuestion{id}")
+   
+    public ModelAndView updateQuestion(@PathVariable("id") int id,Questions quest){
+     Userdao dao = new Userdao();
+    dao.updateQuestion(id,quest.getQuestion(),quest.getA(),quest.getB(),quest.getC(),quest.getD(),quest.getCorrect());
+    return new ModelAndView("homeAdmin");
+    
+    }
+    
+    
+    
+    
+    
+    
+    @RequestMapping("logoutAdmin")
+       public ModelAndView logoutAdmin(){
+        flagMain = false;
+        return new ModelAndView("home");
+    }
     
     
     

@@ -90,25 +90,25 @@
                 <div class="column">
                     <div class="panel">
                         <div class="panelbody">Subject<label>Java</label></div>
-                        <div class="panelscore">Score<label>${javaScore}</label></div>            
+                        <div class="panelscore">Total Score<label>${javaScore}</label></div>            
                     </div>
                 </div>
                 <div class="column">
                     <div class="panel">
                         <div class="panelbody">Subject<label>C#</label></div>
-                        <div class="panelscore">Score<label>${cSharpScore}</label></div>              
+                        <div class="panelscore">Total Score<label>${cSharpScore}</label></div>              
                     </div>
                 </div>
                 <div class="column">
                     <div class="panel">
                         <div class="panelbody">Subject<label>Javascript</label></div>
-                        <div class="panelscore">Score<label>${javascriptScore}</label></div>             
+                        <div class="panelscore">Total Score<label>${javascriptScore}</label></div>             
                     </div>
                 </div>
                     <div class="column">
                     <div class="panel">
                         <div class="panelbody">Subject<label>Python</label></div>
-                        <div class="panelscore">Score<label>${pythonScore}</label></div>             
+                        <div class="panelscore">Total Score<label>${pythonScore}</label></div>             
                     </div>
                 </div>
                 

@@ -17,8 +17,8 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     </head>
     <body>
-        <a href="viewQuestions">all questoions</a>
-     
+        <a href="viewQuestions"><button type="button" class="btn btn-secondary">All Question</button></a>
+        <a href="logoutAdmin"><button type="button" class="btn btn-secondary">Log Out</button></a>
         
         <h1>${list.size()}</h1>
 
